@@ -1,20 +1,29 @@
-import React from "react";
+import React, {Fragment} from "react"
+import { useState } from "react"
 
 function App() {
+  const [title, setTitle] = useState("My name is harshit");
+
+  console.log("APP RENDERED!");
+
+  function updateTitle() {
+      setTitle("My name is " + Math.random());
+  }
+
   return (
-    <div>
-      <Header title="Welcome to React!" />
-      <Header title="This is the second header" />
-    </div>
+      <>
+          <button onClick={updateTitle}>Update the title</button>
+          <Header title={title} />
+          <Header title="harshit lol" />
+      </>
   );
 }
 
 function Header({ title }) {
-  return (
-    <div>
-      <h1>{title}</h1>
-    </div>
-  );
+  console.log("HEADER RENDERED:", title);
+
+  return <div>{title}</div>;
 }
 
-export default App;
+
+export default App
