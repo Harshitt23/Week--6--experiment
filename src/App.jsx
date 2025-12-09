@@ -135,65 +135,69 @@
 
 
 
-//----------------------------------------------USeEffect------------------------------------------
-import { useEffect, useState } from "react";
+// //----------------------------------------------USeEffect------------------------------------------
+// import { useEffect, useState } from "react";
 
-function App() {
-  const [todos, setTodos] = useState([]);
+// function App() {
+//   const [todos, setTodos] = useState([]);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      fetch("http://localhost:3001/todos")
-        .then(res => res.json())
-        .then(data => {
-          setTodos(data || []);
-        })
-        .catch(() => {
-          // handle fetch error silently for now
-        });
-    }, 2000); // polls every 2 sec
+//   useEffect(() => {
+//     const interval = setInterval(() => {
+//       fetch("http://localhost:3001/todos")
+//         .then(res => res.json())
+//         .then(data => {
+//           setTodos(data || []);
+//         })
+//         .catch(() => {
+//           // handle fetch error silently for now
+//         });
+//     }, 2000); // polls every 2 sec
 
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
+//     return () => {
+//       clearInterval(interval);
+//     };
+//   }, []);
 
-  return (
-    <div>
-      <h1>Todos:</h1>
-      {todos.map(todo => (
-        <Todo
-          key={todo.id}
-          id={todo.id}
-          title={todo.title}
-          description={todo.description}
-        />
-      ))}
-    </div>
-  );
-}
+//   return (
+//     <div>
+//       <h1>Todos:</h1>
+//       {todos.map(todo => (
+//         <Todo
+//           key={todo.id}
+//           id={todo.id}
+//           title={todo.title}
+//           description={todo.description}
+//         />
+//       ))}
+//     </div>
+//   );
+// }
 
-// Todo component accepts title and description and renders them
-function Todo({ id, title, description }) {
-  return (
-    <div style={{ margin: "10px", padding: "10px", border: "2px solid #ccc" }}>
-      <h4>{id}</h4>
-      <h3>{title}</h3>
-      <p>{description}</p>
-    </div>
-  );
-}
+// // Todo component accepts title and description and renders them
+// function Todo({ id, title, description }) {
+//   return (
+//     <div style={{ margin: "10px", padding: "10px", border: "2px solid #ccc" }}>
+//       <h4>{id}</h4>
+//       <h3>{title}</h3>
+//       <p>{description}</p>
+//     </div>
+//   );
+// }
 
-export default App;
+// export default App;
 
-//we have created our own server to fetch the data in this todo ~ see the url ( we have made it ourself )
-//u can check how we did it in projects notes 
-//also db.json., we created it to make server
+// //we have created our own server to fetch the data in this todo ~ see the url ( we have made it ourself )
+// //u can check how we did it in projects notes 
+// //also db.json., we created it to make server
 
 
 
 //----------------------------------------------UseMemo------------------------------------------
 
+import { useState } from "react";
+
+function App() {
+  const [hello, setHello] = useState([]);
 
 
 //----------------------------------------------UseCallBack------------------------------------------
@@ -208,4 +212,4 @@ export default App;
 
 
 
-//----------------------------------------------PropDrilling------------------------------------------
+//----------------------------------------------PropDrilling------------------------------------------    
