@@ -197,6 +197,7 @@ import { react } from "react";
 import { useState } from "react";
 
 const [todo,setTodos] = useState[0];
+cost a = 0;
 //----------------------------------------------UseCallBack------------------------------------------
 
 
